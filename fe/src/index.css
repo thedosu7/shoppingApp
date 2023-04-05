@@ -29,18 +29,23 @@ main {
 .product-info {
   padding: 1rem;
 }
-.btn-primary {
+.btn-primary,
+.btn-stock {
   background-color: #2e82e9;
   color: #000000;
   display: inline-block;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: -20px;
+  margin-top: 20px;
 }
 .rating span {
   color: #000000;
 }
 .img-large {
   max-width: 100%;
+}
+.img-thumbnail {
+  height: 100px;
+  display: block;
 }

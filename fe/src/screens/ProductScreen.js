@@ -1,17 +1,18 @@
 import axios from 'axios';
-import { useEffect, useReducer } from 'react';
+import { useContext, useEffect, useReducer } from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
 import ListGroup from 'react-bootstrap/esm/ListGroup';
 import Card from 'react-bootstrap/esm/Card';
 import Badge from 'react-bootstrap/esm/Badge';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Rate from '../pages/Rate';
 import Button from 'react-bootstrap/esm/Button';
 import { Helmet } from 'react-helmet-async';
 import Loading from '../pages/Loading';
 import MessageBox from '../pages/MessageBox';
 import { handleError } from '../ulti';
+import { CartStore } from '../pages/CartStore';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -27,6 +28,7 @@ const reducer = (state, action) => {
 };
 function ProductScreen() {
   //hook
+  const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
@@ -46,6 +48,24 @@ function ProductScreen() {
     };
     fetchData();
   }, [slug]);
+  //define the state of the context and dispatch and rename
+  const { state, dispatch: contextDispatch } = useContext(CartStore); //useContext access to the state of the context and change the context.
+  const { cart } = state;
+
+  const addToCart = async () => {
+    const existItem = cart.cartItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('Sorry. Product is out of stock');
+      return;
+    }
+    contextDispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { ...product, quantity },
+    });
+    navigate('/cart'); //navigate to other pages
+  };
   return loading ? (
     <Loading />
   ) : error ? (
@@ -107,7 +127,9 @@ function ProductScreen() {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button variant="success">Add to Cart</Button>
+                      <Button variant="success" onClick={addToCart}>
+                        Add to Cart
+                      </Button>
                     </div>
                   </ListGroup.Item>
                 )}
