@@ -1,12 +1,12 @@
 const data = {
   products: [
     {
-      name: 'Manchester United Third Shirt 2022-23',
+      name: 'ManUtd Third Shirt 2022-23',
       slug: 'mu-nike-shirt',
       category: 'Shirts',
       image: '/images/p1.webp',
       price: 120,
-      countInStock: 10,
+      countInStock: 0,
       brand: 'Nike',
       rating: 4.5,
       numReviews: 10,
@@ -37,7 +37,7 @@ const data = {
       description: 'high quality product',
     },
     {
-      name: 'Barcelona Home Shirt 2022-23',
+      name: 'Barce Home Shirt 2022-23',
       slug: 'barce-adidas-shirt',
       category: 'Shirts',
       image: '/images/p4.webp',
