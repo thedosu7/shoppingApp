@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'ManUtd Third Shirt 2022-23',
       slug: 'mu-nike-shirt',
       category: 'Shirts',
@@ -14,7 +14,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'PSG Home Shirt 2022-23',
       slug: 'psg-adidas-shirt',
       category: 'Shirts',
@@ -27,7 +27,7 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Chelsea Third Shirt 2022-23',
       slug: 'chelsea-nike-shirt',
       category: 'Pants',
@@ -40,7 +40,7 @@ const data = {
       description: 'high quality product',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Barce Home Shirt 2022-23',
       slug: 'barce-adidas-shirt',
       category: 'Shirts',
