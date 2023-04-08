@@ -49,3 +49,6 @@ main {
   height: 100px;
   display: block;
 }
+.small-container{
+  max-width: 600px;
+}
