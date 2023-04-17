@@ -9,6 +9,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CartStore } from '../pages/CartStore';
 import MessageBox from '../pages/MessageBox';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function CartScreen() {
   const navigate = useNavigate();
@@ -44,7 +46,10 @@ export default function CartScreen() {
         <Col md={8}>
           {cartItems.length === 0 ? (
             <MessageBox>
-              Cart is empty. <Link to="/">Go Shopping</Link>
+              <Link to="/">
+                Shop Now
+                <FontAwesomeIcon icon={faCartShopping} size="1x" />
+              </Link>
             </MessageBox>
           ) : (
             <ListGroup>
