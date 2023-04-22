@@ -33,6 +33,8 @@ import DashboardScreen from './screens/DashboardScreen';
 import ListProductScreen from './screens/ListProductScreen';
 import EditProductScreen from './screens/EditProductScreen';
 import OrderListScreen from './screens/OrderListScreen';
+import UserListScreen from './screens/UserListScreen';
+import UserEditScreen from './screens/UserEditScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(CartStore);
   const { cart, userInfo } = state;
@@ -194,6 +196,22 @@ function App() {
                   <AuthRoute>
                     <OrderScreen />
                   </AuthRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/user/:id"
+                element={
+                  <AdminRoute>
+                    <UserEditScreen />
+                  </AdminRoute>
                 }
               ></Route>
               <Route
