@@ -46,7 +46,7 @@ const data = {
       // _id: '3',
       name: 'Chelsea Third Shirt 2022-23',
       slug: 'chelsea-nike-shirt',
-      category: 'Pants',
+      category: 'Shirts',
       image: '/images/p3.webp',
       price: 125,
       countInStock: 15,
