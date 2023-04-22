@@ -30,7 +30,7 @@ main {
   padding: 1rem;
 }
 .btn-primary,
-.btn-stock .btn-outline-primary {
+.btn-outline-primary {
   background-color: #2e82e9;
   color: #000000;
   display: inline-block;
@@ -38,6 +38,16 @@ main {
   left: 50%;
   transform: translateX(-50%);
   margin-top: 20px;
+}
+.btn-stock {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+.btn-create {
+  left: 90%;
 }
 .navbar-brand {
   font-weight: bold;

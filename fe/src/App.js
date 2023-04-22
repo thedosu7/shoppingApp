@@ -30,6 +30,8 @@ import SearchScreen from './screens/SearchScreen';
 import AdminRoute from './pages/AdminRoute';
 import AuthRoute from './pages/AuthRoute';
 import DashboardScreen from './screens/DashboardScreen';
+import ListProductScreen from './screens/ListProductScreen';
+import EditProductScreen from './screens/EditProductScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(CartStore);
   const { cart, userInfo } = state;
@@ -123,13 +125,13 @@ function App() {
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/productlist">
+                      <LinkContainer to="/admin/products">
                         <NavDropdown.Item>Products</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/orderlist">
+                      <LinkContainer to="/admin/orders">
                         <NavDropdown.Item>Orders</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/userlist">
+                      <LinkContainer to="/admin/users">
                         <NavDropdown.Item>Users</NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
@@ -191,6 +193,22 @@ function App() {
                   <AuthRoute>
                     <OrderScreen />
                   </AuthRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/products"
+                element={
+                  <AdminRoute>
+                    <ListProductScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/product/:id"
+                element={
+                  <AdminRoute>
+                    <EditProductScreen />
+                  </AdminRoute>
                 }
               ></Route>
               <Route
