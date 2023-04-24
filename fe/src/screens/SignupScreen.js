@@ -7,7 +7,7 @@ import Axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { CartStore } from '../pages/CartStore';
 import { toast } from 'react-toastify';
-import { handleError } from '../ulti.js';
+import { handleError } from '../utils';
 
 export default function SignupScreen() {
   const navigate = useNavigate();

@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CartStore } from '../pages/CartStore';
-import { handleError } from '../ulti';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { toast } from 'react-toastify';
+import { handleError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {

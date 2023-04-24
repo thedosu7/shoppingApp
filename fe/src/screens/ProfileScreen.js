@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { CartStore } from '../pages/CartStore';
-import { handleError } from '../ulti';
+import { handleError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {

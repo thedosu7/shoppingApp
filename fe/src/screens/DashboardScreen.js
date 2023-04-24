@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { CartStore } from '../pages/CartStore';
-import { handleError } from '../ulti';
+import { handleError } from '../utils';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 

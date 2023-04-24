@@ -7,9 +7,9 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { CartStore } from '../pages/CartStore';
-import { handleError } from '../ulti';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
+import { handleError } from '../utils';
 
 
 const reducer = (state, action) => {

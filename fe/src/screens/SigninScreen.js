@@ -7,9 +7,9 @@ import Axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { CartStore } from '../pages/CartStore';
 import { toast } from 'react-toastify';
-import { handleError } from '../ulti.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaste, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
+import { handleError } from '../utils';
 
 export default function SigninScreen() {
   const navigate = useNavigate();

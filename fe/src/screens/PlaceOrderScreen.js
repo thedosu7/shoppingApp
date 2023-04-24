@@ -8,10 +8,10 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { toast } from 'react-toastify';
-import { handleError } from '../ulti';
 import { CartStore } from '../pages/CartStore';
 import Checkout from '../pages/Checkout';
 import LoadingBox from '../pages/LoadingBox';
+import { handleError } from '../utils';
 const reducer = (state, action) => {
   switch (action.type) {
     case 'CREATE_REQUEST':

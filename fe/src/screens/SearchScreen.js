@@ -7,10 +7,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
-import { handleError } from '../ulti';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 import Product from '../pages/Product';
+import { handleError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {

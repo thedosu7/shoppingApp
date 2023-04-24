@@ -5,11 +5,11 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { Helmet } from 'react-helmet-async';
 import Button from 'react-bootstrap/Button';
-import { handleError } from '../ulti';
 import { CartStore } from '../pages/CartStore';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 import { toast } from 'react-toastify';
+import { handleError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {

@@ -9,11 +9,11 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
-import { handleError } from '../ulti';
 import { CartStore } from '../pages/CartStore';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import { toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
+import { handleError } from '../utils';
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':

@@ -5,10 +5,10 @@ import { CartStore } from '../pages/CartStore';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 import { toast } from 'react-toastify';
-import { handleError } from '../ulti';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { handleError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {

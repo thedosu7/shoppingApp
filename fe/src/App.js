@@ -22,7 +22,6 @@ import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import { faCartShopping, faStore } from '@fortawesome/free-solid-svg-icons';
 import ProfileScreen from './screens/ProfileScreen';
-import { handleError } from './ulti';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import SearchBox from './pages/SearchBox';
@@ -35,6 +34,7 @@ import EditProductScreen from './screens/EditProductScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import { handleError } from './utils';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(CartStore);
   const { cart, userInfo } = state;

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { CartStore } from '../pages/CartStore';
-import { handleError } from '../ulti';
+import { handleError } from '../utils';
 import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 import { toast } from 'react-toastify';
@@ -137,7 +137,7 @@ export default function OrderListScreen() {
                   &nbsp;
                   <Button
                     type="button"
-                    variant="light"
+                    variant="danger"
                     onClick={() => deleteHandler(order)}
                   >
                     Delete
