@@ -74,7 +74,7 @@ export default function OrderListScreen() {
       try {
         dispatch({ type: 'DELETE_REQUEST' });
         await axios.delete(`/api/orders/${order._id}`, {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
+          headers: { Authorization: `Bearer ${userInfo.token}` }, //phan quyen
         });
         toast.success('order deleted successfully');
         dispatch({ type: 'DELETE_SUCCESS' });
@@ -93,7 +93,7 @@ export default function OrderListScreen() {
         <title>Orders</title>
       </Helmet>
       <h1>Orders</h1>
-      {loadingDelete && <LoadingBox></LoadingBox>}
+      {/* {loadingDelete && <LoadingBox></LoadingBox>} */}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

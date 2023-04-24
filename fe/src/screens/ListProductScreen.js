@@ -92,7 +92,7 @@ export default function ProductListScreen() {
   }, [page, userInfo, successDelete]);
 
   const createHandler = async () => {
-    if (window.confirm('Are you sure to create?')) {
+    if (window.confirm('Create new product')) {
       try {
         dispatch({ type: 'CREATE_REQUEST' });
         const { data } = await axios.post(
@@ -102,7 +102,6 @@ export default function ProductListScreen() {
             headers: { Authorization: `Bearer ${userInfo.token}` },
           }
         );
-        toast.success('product created successfully');
         dispatch({ type: 'CREATE_SUCCESS' });
         navigate(`/admin/product/${data.product._id}`);
       } catch (err) {
@@ -186,7 +185,7 @@ export default function ProductListScreen() {
                     &nbsp;
                     <Button
                       type="button"
-                      variant="light"
+                      variant="danger"
                       onClick={() => deleteHandler(product)}
                     >
                       Delete

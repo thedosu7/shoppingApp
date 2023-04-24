@@ -46,6 +46,31 @@ userRouter.delete(
   })
 );
 userRouter.put(
+  '/profile',
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+    if (user) {
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
+      if (req.body.password) {
+        user.password = bcrypt.hashSync(req.body.password, 8);
+      }
+
+      const updateUser = await user.save();
+      res.send({
+        _id: updateUser._id,
+        name: updateUser.name,
+        email: updateUser.email,
+        isAdmin: updateUser.isAdmin,
+        token: generateToken(updateUser),
+      });
+    } else {
+      res.status(404).send({ message: 'User not found' });
+    }
+  })
+);
+userRouter.put(
   '/:id',
   isAuth,
   isAdmin,
@@ -100,29 +125,5 @@ userRouter.post(
     });
   })
 );
-userRouter.put(
-  '/profile',
-  isAuth,
-  expressAsyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id);
-    if (user) {
-      user.name = req.body.name || user.name;
-      user.email = req.body.email || user.email;
-      if (req.body.password) {
-        user.password = bcrypt.hashSync(req.body.password, 8);
-      }
 
-      const updateUser = await user.save();
-      res.send({
-        _id: updateUser._id,
-        name: updateUser.name,
-        email: updateUser.email,
-        isAdmin: updateUser.isAdmin,
-        token: generateToken(updateUser),
-      });
-    } else {
-      res.status(404).send({ message: 'User not found' });
-    }
-  })
-);
 export default userRouter;

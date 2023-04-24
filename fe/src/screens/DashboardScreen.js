@@ -64,7 +64,7 @@ export default function DashboardScreen() {
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    {summary.users && summary.users[0]
+                    {summary?.users?.length !== 0
                       ? summary.users[0].numUsers
                       : 0}
                   </Card.Title>
@@ -76,7 +76,7 @@ export default function DashboardScreen() {
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    {summary.orders && summary.users[0]
+                    {summary?.orders?.length !== 0
                       ? summary.orders[0].numOrders
                       : 0}
                   </Card.Title>
@@ -90,7 +90,7 @@ export default function DashboardScreen() {
                   <Card.Title>
                     $
                     {summary.orders && summary.users[0]
-                      ? summary.orders[0].totalSales.toFixed(2)
+                      ? summary.orders[0].totalSales.toFixed(3)
                       : 0}
                   </Card.Title>
                   <Card.Text> Orders</Card.Text>
