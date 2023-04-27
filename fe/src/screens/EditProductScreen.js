@@ -111,7 +111,7 @@ export default function ProductEditScreen() {
       toast.success('Product updated successfully');
       navigate('/admin/products');
     } catch (err) {
-      toast.error(handleError(err));
+      toast.error('Updated failed (unique name)');
       dispatch({ type: 'UPDATE_FAIL' });
     }
   };
@@ -139,9 +139,9 @@ export default function ProductEditScreen() {
   return (
     <Container className="small-container">
       <Helmet>
-        <title>Edit Product ${productId}</title>
+        <title>Edit Product</title>
       </Helmet>
-      <h1>Edit Product {productId}</h1>
+      <h1>Edit Product {name}</h1>
 
       {loading ? (
         <LoadingBox></LoadingBox>

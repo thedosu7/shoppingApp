@@ -57,7 +57,7 @@ function Rate(props) {
           }
         />
       </span>
-      <span> {numReviews} reviews</span>
+      <span> {numReviews}</span>
     </div>
   );
 }

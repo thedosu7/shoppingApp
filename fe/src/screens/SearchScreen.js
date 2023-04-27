@@ -11,6 +11,7 @@ import LoadingBox from '../pages/LoadingBox';
 import MessageBox from '../pages/MessageBox';
 import Product from '../pages/Product';
 import { handleError } from '../utils';
+import Rate from '../pages/Rate';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,6 +46,27 @@ const prices = [
   {
     name: '$201 to $1000',
     value: '201-1000',
+  },
+];
+const ratings = [
+  {
+    name: '4stars',
+    rating: 4,
+  },
+
+  {
+    name: '3stars',
+    rating: 3,
+  },
+
+  {
+    name: '2stars',
+    rating: 2,
+  },
+
+  {
+    name: '1stars',
+    rating: 1,
   },
 ];
 export default function SearchScreen() {
@@ -155,6 +177,19 @@ export default function SearchScreen() {
                     className={p.value === price ? 'text-bold' : ''}
                   >
                     {p.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3>Customer Review</h3>
+            <ul>
+              {ratings.map((r) => (
+                <li key={r.name}>
+                  <Link
+                    to={getFilterUrl({ rating: r.rating })}
+                    className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
+                  >
+                    <Rate rating={r.rating}></Rate>
                   </Link>
                 </li>
               ))}
